@@ -21,10 +21,7 @@ def create_app():
     # 引入数据库表--用于迁移用的
     db.register(app)
 
-    # 数据库迁移指令,没有的话return app即可
-    manager = Manager(app)
-    # manager是Flask-Script的实例，这条语句在flask-Script中添加一个db命令
-    manager.add_command("db", MigrateCommand)
 
-    return manager
+
+    return app
 
