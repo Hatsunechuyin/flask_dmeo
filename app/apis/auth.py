@@ -4,7 +4,8 @@ from app.apis import apis
 from app.extension import db
 
 @apis.route('test',
-            endpoint='test')
+    methods=['get'],
+    endpoint='test')
 def test():
     return 'test'
 
@@ -17,7 +18,8 @@ class Article(db.Model):
 
 
 @apis.route('index',
-            endpoint='index')
+    methods=['get'],
+    endpoint='index')
 def index():
     article1 = Article(title=u'aaa', content=u'bbb')
     print(article1)
