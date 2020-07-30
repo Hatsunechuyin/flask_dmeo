@@ -3,9 +3,11 @@ from sqlalchemy.testing import db
 from app.apis import apis
 from app.extension import db
 
-@apis.route('test',
-    methods=['get'],
-    endpoint='test')
+@apis.route(
+    'test',
+    methods=['GET'],
+    endpoint='test'
+)
 def test():
     return 'test'
 
@@ -17,9 +19,11 @@ class Article(db.Model):
     content = db.Column(db.Text, nullable=False)
 
 
-@apis.route('index',
-    methods=['get'],
-    endpoint='index')
+@apis.route(
+    'index',
+    methods=['GET'],
+    endpoint='index'
+)
 def index():
     article1 = Article(title=u'aaa', content=u'bbb')
     print(article1)
